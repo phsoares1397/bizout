@@ -1,0 +1,31 @@
+{
+  "name": "vue.bizout-front",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@editorjs/editorjs": "^2.30.8",
+    "@tailwindcss/vite": "^4.1.11",
+    "infinite-tree": "^1.18.0",
+    "liquor-tree": "^0.2.70",
+    "lucide-vue-next": "^0.525.0",
+    "quill": "^2.0.3",
+    "quill-delta-to-html": "^0.12.1",
+    "tailwindcss": "^4.1.11",
+    "vue": "^3.5.17",
+    "vue-chartjs": "^5.3.2",
+    "vue3-treeview": "^0.4.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.1",
+    "@vue/tsconfig": "^0.7.0",
+    "typescript": "~5.8.3",
+    "vite": "^7.0.0",
+    "vue-tsc": "^2.2.10"
+  }
+}
