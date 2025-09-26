@@ -32,7 +32,7 @@ func main() {
 
 	fmt.Println("Carregando tabela...")
 
-	db, _ := sql.Open("mysql", "pedrosilva:phSS1397@@tcp(localhost:3306)/bizout_qst?allowNativePasswords=true")
+	db, _ := sql.Open("mysql", "****:****:@@tcp(localhost:3306)/****:?allowNativePasswords=true")
 
 	var bnc uint16
 	var org uint16
@@ -400,7 +400,7 @@ func questFetch(w http.ResponseWriter, r *http.Request) {
 	// ----------- acessar banco -----------
 	var m = make(map[int]interface{})
 	if len(ids) > 0 {
-		db, _ := sql.Open("mysql", "pedrosilva:phSS1397@@tcp(localhost:3306)/bizout_qst?allowNativePasswords=true")
+		db, _ := sql.Open("mysql", "****:****:@@tcp(localhost:3306)/****:?allowNativePasswords=true")
 		defer db.Close()
 
 		sqlQ := "SELECT id, cont, c_itens, asst, crg, bnc, org, qcmt FROM cont_conc WHERE id = " + strconv.Itoa(int(ids[0]))
@@ -471,7 +471,7 @@ func questByID(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// ---------- acessar banco ----------
-	db, err := sql.Open("mysql", "pedrosilva:phSS1397@@tcp(localhost:3306)/bizout_qst?allowNativePasswords=true")
+	db, err := sql.Open("mysql", "****:****@@tcp(localhost:3306)/****?allowNativePasswords=true")
 	if err != nil {
 		http.Error(w, "db.conn.error", http.StatusInternalServerError)
 		return
@@ -530,7 +530,7 @@ func questByID(w http.ResponseWriter, r *http.Request) {
 }
 
 func updateValues(w http.ResponseWriter, r *http.Request) {
-	db_ads, _ := sql.Open("mysql", "pedrosilva:phSS1397@@tcp(localhost:3306)/bzt_ads?allowNativePasswords=true")
+	db_ads, _ := sql.Open("mysql", "****:****@@tcp(localhost:3306)/****?allowNativePasswords=true")
 
 	db_ads.QueryRow("SELECT COUNT(*) FROM small WHERE 1").Scan(&ad_small_qnt)
 	db_ads.QueryRow("SELECT COUNT(*) FROM full WHERE 1").Scan(&ad_full_qnt)
