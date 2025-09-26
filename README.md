@@ -12,4 +12,5 @@ Entre as funcionalidades implementadas, destacam-se:
     Sessões de usuário: controladas de forma segura e eficiente utilizando Redis.
 
 LinkedIn: https://www.linkedin.com/in/pedro-soares-b4500a263/
+
 Email: phsoares@usp.br
