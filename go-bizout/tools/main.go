@@ -28,7 +28,7 @@ func main() {
 
 	var err error
 	// Conexão com MySQL
-	db, err = sql.Open("mysql", "pedrosilva:phSS1397@@tcp(localhost:3306)/bizout_users?allowNativePasswords=true")
+	db, err = sql.Open("mysql", "****:****@@tcp(localhost:3306)/****?allowNativePasswords=true")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -143,7 +143,7 @@ func newAssts(w http.ResponseWriter, r *http.Request) {
 	var dataIds []int
 	json.Unmarshal([]byte(op), &dataIds)
 
-	db, _ := sql.Open("mysql", "pedrosilva:phSS1397@@tcp(localhost:3306)/bizout_qst?allowNativePasswords=true")
+	db, _ := sql.Open("mysql", "****:****@@tcp(localhost:3306)/****?allowNativePasswords=true")
 	defer db.Close()
 
 	sql := "SELECT id, assts_ids, assts_names, likes FROM new_assts_ids WHERE id = " + strconv.Itoa(dataIds[0])
@@ -199,7 +199,7 @@ func createReport(w http.ResponseWriter, r *http.Request) {
 			m[1] = "Captcha invalido"
 			response(&m, w)
 		} else {
-			db, _ := sql.Open("mysql", "pedrosilva:phSS1397@@tcp(localhost:3306)/bizout_qst?allowNativePasswords=true")
+			db, _ := sql.Open("mysql", "****:****@@tcp(localhost:3306)/****?allowNativePasswords=true")
 			defer db.Close()
 
 			_, err := db.Exec("INSERT INTO `pending` (`id`, `data`) VALUES (NULL, ?)", &data)
@@ -295,7 +295,7 @@ func commentsCreate(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// 🎯 processa criação do comentário
-	qdb, _ := sql.Open("mysql", "pedrosilva:phSS1397@@tcp(localhost:3306)/bizout_qst?allowNativePasswords=true")
+	qdb, _ := sql.Open("mysql", "****:****@@tcp(localhost:3306)/****?allowNativePasswords=true")
 	defer qdb.Close()
 
 	var dataJson []string
@@ -473,7 +473,7 @@ func commentsDelete(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// 🎯 processa deleção do comentário
-	qdb, _ := sql.Open("mysql", "pedrosilva:phSS1397@@tcp(localhost:3306)/bizout_qst?allowNativePasswords=true")
+	qdb, _ := sql.Open("mysql", "****:****@@tcp(localhost:3306)/****?allowNativePasswords=true")
 	defer qdb.Close()
 
 	var dataJson []string
@@ -654,7 +654,7 @@ func commentsEdit(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// 🎯 processa edição do comentário
-	qdb, _ := sql.Open("mysql", "pedrosilva:phSS1397@@tcp(localhost:3306)/bizout_qst?allowNativePasswords=true")
+	qdb, _ := sql.Open("mysql", "****:****@@tcp(localhost:3306)/****?allowNativePasswords=true")
 	defer qdb.Close()
 
 	var dataJson []string
@@ -702,7 +702,7 @@ func commentsRead(w http.ResponseWriter, r *http.Request) {
 		op = op_[0]
 	}
 
-	db, _ := sql.Open("mysql", "pedrosilva:phSS1397@@tcp(localhost:3306)/bizout_qst?allowNativePasswords=true")
+	db, _ := sql.Open("mysql", "****:****@@tcp(localhost:3306)/****?allowNativePasswords=true")
 	defer db.Close()
 
 	var cmts string
@@ -778,7 +778,7 @@ func lists(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	db, _ := sql.Open("mysql", "pedrosilva:phSS1397@@tcp(localhost:3306)/bizout_users?allowNativePasswords=true")
+	db, _ := sql.Open("mysql", "****:****@@tcp(localhost:3306)/****?allowNativePasswords=true")
 	defer db.Close()
 
 	if op == "1" { //Create list
@@ -1033,7 +1033,7 @@ func markerCreate(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	db, _ := sql.Open("mysql", "pedrosilva:phSS1397@@tcp(localhost:3306)/bizout_users?allowNativePasswords=true")
+	db, _ := sql.Open("mysql", "****:****@@tcp(localhost:3306)/****?allowNativePasswords=true")
 	defer db.Close()
 
 	// 1️⃣ cria novo marcador em udata00
@@ -1166,7 +1166,7 @@ func markerDelete(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	db, _ := sql.Open("mysql", "pedrosilva:phSS1397@@tcp(localhost:3306)/bizout_users?allowNativePasswords=true")
+	db, _ := sql.Open("mysql", "****:****@@tcp(localhost:3306)/****?allowNativePasswords=true")
 	defer db.Close()
 
 	// 1️⃣ busca marcadores existentes no udataMain
@@ -1276,7 +1276,7 @@ func markerList(w http.ResponseWriter, r *http.Request) {
 
 	col := "mkrs_" + banco
 
-	db, _ := sql.Open("mysql", "pedrosilva:phSS1397@@tcp(localhost:3306)/bizout_users?allowNativePasswords=true")
+	db, _ := sql.Open("mysql", "****:****@@tcp(localhost:3306)/****?allowNativePasswords=true")
 	defer db.Close()
 
 	var mkrs string
@@ -1359,7 +1359,7 @@ func markerClear(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	db, _ := sql.Open("mysql", "pedrosilva:phSS1397@@tcp(localhost:3306)/bizout_users?allowNativePasswords=true")
+	db, _ := sql.Open("mysql", "****:****@@tcp(localhost:3306)/****?allowNativePasswords=true")
 	defer db.Close()
 
 	// ⚡ Zera o conteúdo do marcador em udata00
@@ -1441,7 +1441,7 @@ func markerInsertCorrect(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	db, _ := sql.Open("mysql", "pedrosilva:phSS1397@@tcp(localhost:3306)/bizout_users?allowNativePasswords=true")
+	db, _ := sql.Open("mysql", "****:****@@tcp(localhost:3306)/****?allowNativePasswords=true")
 	defer db.Close()
 
 	// pega data atual do marcador
@@ -1589,7 +1589,7 @@ func markerInsertWrong(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	db, _ := sql.Open("mysql", "pedrosilva:phSS1397@@tcp(localhost:3306)/bizout_users?allowNativePasswords=true")
+	db, _ := sql.Open("mysql", "****:****@@tcp(localhost:3306)/****?allowNativePasswords=true")
 	defer db.Close()
 
 	var dataStr string
@@ -1735,7 +1735,7 @@ func markerReadData(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	db, _ := sql.Open("mysql", "pedrosilva:phSS1397@@tcp(localhost:3306)/bizout_users?allowNativePasswords=true")
+	db, _ := sql.Open("mysql", "****:****@@tcp(localhost:3306)/****?allowNativePasswords=true")
 	defer db.Close()
 
 	var dataStr string
@@ -1826,7 +1826,7 @@ func markerReadGraphic(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	db, _ := sql.Open("mysql", "pedrosilva:phSS1397@@tcp(localhost:3306)/bizout_users?allowNativePasswords=true")
+	db, _ := sql.Open("mysql", "****:****@@tcp(localhost:3306)/****?allowNativePasswords=true")
 	defer db.Close()
 
 	// pega dados de udata03
@@ -1895,7 +1895,7 @@ func filtersRead(w http.ResponseWriter, r *http.Request) {
 		inst = inst_[0]
 	}
 
-	db, _ := sql.Open("mysql", "pedrosilva:phSS1397@@tcp(localhost:3306)/bzt_data?allowNativePasswords=true")
+	db, _ := sql.Open("mysql", "****:****@@tcp(localhost:3306)/****?allowNativePasswords=true")
 	defer db.Close()
 
 	result_name := ""
