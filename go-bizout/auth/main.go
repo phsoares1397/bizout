@@ -26,7 +26,7 @@ var ctx = context.Background()
 func main() {
 	var err error
 	// Conexão com MySQL
-	db, err = sql.Open("mysql", "pedrosilva:phSS1397@@tcp(localhost:3306)/bizout_users?allowNativePasswords=true")
+	db, err = sql.Open("mysql", "****:*****@@tcp(localhost:3306)/******?allowNativePasswords=true")
 	if err != nil {
 		log.Fatal(err)
 	}
