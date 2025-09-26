@@ -39,7 +39,7 @@ func main() {
 	fmt.Println("Elastic/Server iniciando...")
 	fmt.Println("Carregando tabela(orgaos)...")
 
-	db, _ := sql.Open("mysql", "pedrosilva:phSS1397@@tcp(localhost:3306)/bizout_data?allowNativePasswords=true")
+	db, _ := sql.Open("mysql", "****:****@@tcp(localhost:3306)/****?allowNativePasswords=true")
 
 	var transformed_string string
 	t := transform.Chain(norm.NFD, transform.RemoveFunc(isMn), norm.NFC)
