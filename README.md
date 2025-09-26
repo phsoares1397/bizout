@@ -10,3 +10,6 @@ Entre as funcionalidades implementadas, destacam-se:
     
     Login funcional: com gerenciamento de dispositivos, alteração de senha e personalização de perfil com imagem.
     Sessões de usuário: controladas de forma segura e eficiente utilizando Redis.
+
+LinkedIn: https://www.linkedin.com/in/pedro-soares-b4500a263/
+Email: phsoares@usp.br
